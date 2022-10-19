@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_Khac"
+             Title="Khác">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#f0f0f0" Padding="12">
+            <StackLayout>
+                <Label Text="Tiện ích" TextColor="Black" FontSize="Title" FontAttributes="Bold"></Label>
+                <Frame x:Name="lsdh" ClassId="lsdha" HasShadow="False" CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Image Source="lichsudonhang.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <Label Text="Lịch sử đơn hàng" TextColor="Black" FontSize="Body"></Label>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Frame HorizontalOptions="FillAndExpand" HasShadow="False" CornerRadius="10">
+                        <StackLayout>
+                            <Image Source="nhacdangphat.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Nhạc đang phát" TextColor="Black" FontSize="Body"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HorizontalOptions="FillAndExpand" HasShadow="False" CornerRadius="10">
+                        <StackLayout>
+                            <Image Source="dieukhoan.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Điều khoản" TextColor="Black" FontSize="Body"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="Hỗ trợ" TextColor="Black" FontSize="Title" FontAttributes="Bold" Margin="0, 15, 0, 0"></Label>
+                <Frame Padding="10" HasShadow="False" CornerRadius="10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <Image Source="danhgia.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Đánh giá đơn hàng" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+                        <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LienHeGopYOption_Tapped"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="lienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Liên hệ và góp ý" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Tài khoản" TextColor="Black" FontSize="Title" FontAttributes="Bold" Margin="0, 15, 0, 0"></Label>
+                <Frame Padding="10" HasShadow="False" CornerRadius="10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ThongTinCaNhanOption_Tapped"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="thongtincanhan.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Thông tin cá nhân" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <Image Source="diachidaluu.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Địa chỉ đã lưu" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CaiDatOption_Tapped"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="caidat.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Cài đặt" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="DangNhapOption_Tapped"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="dangnhap.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                            <Label Text="Đăng xuất" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

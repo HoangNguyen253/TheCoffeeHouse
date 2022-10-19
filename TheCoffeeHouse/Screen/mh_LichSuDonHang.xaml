@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_LichSuDonHang"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label Text="Lịch sử đơn hàng" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f0f0f0">
+            <ListView x:Name="lstDSDonHang" RowHeight="120"  BackgroundColor="White" ItemTapped="lstDSDonHang_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="0" Padding="10">
+                                <Image Source="invoice.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="40" WidthRequest="55" ></Image>
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding ThoiGianDatString, StringFormat='Đơn hàng ngày: {0}'}" TextColor="Black" FontSize="16" VerticalOptions="StartAndExpand" Margin="0,5,0,0" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding TongTien, StringFormat='Tổng tiền: {0} VNĐ'}" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand"></Label>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="End" WidthRequest="190">
+                                    <Label Text="{Binding TenTrangThai}" TextColor="Black" FontSize="13" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Margin="0,5,10,0" FontAttributes="Italic"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

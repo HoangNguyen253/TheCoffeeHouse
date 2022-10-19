@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_LienHeGopY"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label Text="Liên hệ góp ý" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ScrollView BackgroundColor="#f1f1f1" Padding="12">
+        <StackLayout>
+            <Frame Padding="10" HasShadow="False" CornerRadius="10">
+                <StackLayout>
+                    <StackLayout x:Name="tongDaiOpt" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tongDaiOpt_Tapped"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="tongdailienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Tổng đài" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Label x:Name="sdtTongDai" Text="18006936" TextColor="Gray" FontSize="Body" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                        <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout x:Name="emailOpt" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="emailOpt_Tapped"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="emaillienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Email" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Label x:Name="emaillienhe" Text="hi@thecoffeehouse.com" TextColor="Gray" FontSize="Body" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                        <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout x:Name="websiteOpt" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="websiteOpt_Tapped"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="websitelienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Website" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Label Text="https://wwww.thecoffeehouse.com" TextColor="Gray" FontSize="Body" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                        <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <Image Source="facebooklienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Facebook" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                            <Label Text="facebook.com/The.Coffee.House.2014" TextColor="Gray" FontSize="Body" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                        <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GuiGopYVeUngDung_Tapped"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="guigopylienhegopy.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <Label Text="Gửi góp ý về ứng dụng" TextColor="Black" FontSize="Body" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                        <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

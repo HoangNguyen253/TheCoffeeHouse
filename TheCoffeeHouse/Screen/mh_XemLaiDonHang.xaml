@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_XemLaiDonHang"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+                <StackLayout BackgroundColor="#f5f6f0" Spacing="15" Margin="0, 10, 0, 0">
+                <StackLayout>
+                    <Grid ColumnDefinitions="150, 0.5, Auto" BackgroundColor="White" Padding="20, 30">
+                        <Image x:Name="ImageState" Source="capheicondathang.png" Grid.Column="0"></Image>
+                        <BoxView BackgroundColor="Gray" Grid.Column="1"></BoxView>
+                        <StackLayout Grid.Column="2" Padding="10, 0, 10, 0">
+                            <Label x:Name="DateBill" FontSize="14" 
+                                   TextColor="Black"></Label>
+                            <BoxView BackgroundColor="Gray" Margin="0, 20, 0, 30" HeightRequest="0.5"></BoxView>
+                            <Label x:Name="TitleState" Text="Đơn hàng đã sẵn sàng" FontSize="20" FontAttributes="Bold" 
+                                   TextColor="Black"></Label>
+                            <Label x:Name="DescriptState" Text="Đơn hàng đã sẵn sàng bạn hãy đến cửa hàng lấy ngay nhé" FontSize="14" 
+                                   TextColor="Black"></Label>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                    <StackLayout Spacing="0" BackgroundColor="White">
+                    <Label x:Name="lblTypeGet" Text="Tự đến lấy" FontSize="20" TextColor="Black"
+                               FontAttributes="Bold" 
+                               Margin="10, 8, 0, 8" Grid.Column="0"></Label>
+                    <StackLayout Orientation="Horizontal" x:Name="ChooseAddress">
+                        <StackLayout>
+                            <Label x:Name="lblNameAddress" Text="Cửa hàng 01" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"></Label>
+                            <Label x:Name="lblDesAddress" Text="Chưa có cửa hàng được chọn" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="0" BackgroundColor="White" Padding="0, 8, 0, 0" x:Name="dsSanPham">
+                        <Label Text="Các sản phẩm đã chọn"  FontSize="20" FontAttributes="Bold" TextColor="Black"
+                           Margin="10, 8, 0, 8"></Label>
+                    </StackLayout>
+                    <StackLayout Spacing="0" BackgroundColor="White" Padding="8, 8, 8, 8">
+                        <Label Text="Tổng cộng"  FontSize="20" FontAttributes="Bold" TextColor="Black"
+                           Margin="4, 8, 0, 8"></Label>
+                        <StackLayout Orientation="Horizontal" Padding="5, 5">
+                            <Label Text="Thành tiền"  FontSize="16" TextColor="Black"></Label>
+                            <Label x:Name = "totalBillNotDiscount"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand"></Label>
+                        </StackLayout>
+                        <BoxView HeightRequest="0.5" BackgroundColor="Silver" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                        <StackLayout Orientation="Horizontal" Padding="5, 5">
+                            <Label Text="Giảm giá"  FontSize="16" TextColor="Black"></Label>
+                            <Label x:Name = "disCountBill"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand"></Label>
+                        </StackLayout>
+                        <BoxView HeightRequest="0.5" BackgroundColor="Silver" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                        <StackLayout Orientation="Horizontal" Padding="5, 8">
+                            <Label Text="Số tiền cần thanh toán"  FontSize="16" TextColor="Black"
+                               FontAttributes="Bold"></Label>
+                            <Label x:Name = "totalBill" Text="55.000đ"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="20, 0" HeightRequest="70" Margin="0,0,0,12">
+                    <Image x:Name="PayImage" Source="pay.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="50" WidthRequest="50"></Image>
+                    <StackLayout>
+                        <Label x:Name="PayTypeTitle" Text="Chọn phương thức thanh toán" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"
+                               ></Label>
+                        <Label x:Name="PayTypeDescription" Text="Phương thức thanh toán" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                    </StackLayout>
+                </StackLayout>
+                </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

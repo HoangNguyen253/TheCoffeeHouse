@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.AddDiaChiMoi"
+             xmlns:customrender="clr-namespace:TheCoffeeHouse.CusomRender"
+             Title="Thêm địa chỉ">
+    <ContentPage.Content>
+        <StackLayout Margin="0, 5">
+            <StackLayout Padding="20, 0">
+                <Label Text="Nhập tên địa chỉ: " FontSize="15" FontAttributes="Bold"></Label>
+                <Frame Padding="5, 0" CornerRadius="5">
+                    <customrender:NoneBGEntry Keyboard="Text"  FontSize="15"
+                                              Placeholder="Nhà/Cơ quan/Gym/..."
+                                              x:Name="TenDiaChi">
+                    </customrender:NoneBGEntry>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="20, 0">
+                <Label Text="Chọn tỉnh/thành phố:" FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="*, 20">
+                    <Picker Grid.Column="0" x:Name="pickerTinh" ItemDisplayBinding="{Binding name}"
+                            SelectedIndexChanged="pickerTinh_SelectedIndexChanged"></Picker>
+                </Grid>
+            </StackLayout>
+            <StackLayout Padding="20, 0">
+                <Label Text="Chọn quận/huyện:" FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="*, 20">
+                    <Picker Grid.Column="0" x:Name="pickerQuan" ItemDisplayBinding="{Binding name}"
+                            SelectedIndexChanged="pickerQuan_SelectedIndexChanged"></Picker>
+                    <Image x:Name="failTinhImage" Source="close.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center" 
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                    <Image x:Name="sendingTinhImage" Source="sending.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center"
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                    <Image x:Name="successTinhImage" Source="tick.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center"
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                </Grid>
+            </StackLayout>
+            <StackLayout Padding="20, 0">
+                <Label Text="Chọn phường/xã:" FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="*, 20">
+                    <Picker Grid.Column="0" x:Name="pickerPhuong" ItemDisplayBinding="{Binding name}"></Picker>
+                    <Image x:Name="failQuanImage" Source="close.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center" 
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                    <Image x:Name="sendingQuanImage" Source="sending.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center"
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                    <Image x:Name="successQuanImage" Source="tick.png" Grid.Column="1" IsVisible="False"
+                           HeightRequest="15" HorizontalOptions="Center"
+                           WidthRequest="15" VerticalOptions="Center"></Image>
+                </Grid>
+            </StackLayout>
+            <StackLayout Padding="20, 0">
+                <Label Text="Nhập số nhà, tên đường: "></Label>
+                <Frame Padding="5, 0" CornerRadius="5">
+                    <customrender:NoneBGEntry Keyboard="Text"  FontSize="15"
+                                              Placeholder="123 đường 870"
+                                              x:Name="SoNhaDuong">
+                    </customrender:NoneBGEntry>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="20, 0" Margin="0, 15">
+                <Button Text="Thêm" BackgroundColor="#f7851c" HeightRequest="36" Padding="3"
+                        WidthRequest="150" HorizontalOptions="Center" CornerRadius="5"
+                        Clicked="Button_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_ChiTietDonHang"
+             Shell.TabBarIsVisible="False">
+    <Shell.TitleView>
+        <Label Text="Chi tiết đơn hàng" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <Grid>
+            <Grid RowDefinitions="Auto, 60">
+                <ScrollView Grid.Row="0">
+                    <StackLayout BackgroundColor="#f5f6f0" Spacing="15" Margin="0, 10, 0, 0">
+                        <StackLayout Spacing="0" BackgroundColor="White">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblTypeGet" Text="Tự đến lấy" FontSize="20" TextColor="Black"
+                               FontAttributes="Bold" 
+                               Margin="10, 8, 0, 8" Grid.Column="0"></Label>
+                                <Button x:Name="ChangeTypeGet" Text="Thay đổi" FontSize="13" Padding="3" FontAttributes="Bold"
+                                CornerRadius="12" VerticalOptions="Center" HorizontalOptions="Center"
+                                BackgroundColor="#fff1cd" TextColor="#f7851c" 
+                                HeightRequest="24" Grid.Column="1" Clicked="ChangeTypeGet_Clicked"></Button>
+                            </Grid>
+                            <StackLayout Orientation="Horizontal" x:Name="ChooseAddress">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ChooseAddress"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout>
+                                    <Label x:Name="lblNameAddress" Text="Chưa có cửa hàng được chọn" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"></Label>
+                                    <Label x:Name="lblDesAddress" Text="Chưa có cửa hàng được chọn" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                                </StackLayout>
+                                <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20" Margin="0,0,12,0"></Image>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Spacing="0" BackgroundColor="White" Padding="0, 8, 0, 0" x:Name="dsSanPham">
+                            <Label Text="Các sản phẩm đã chọn"  FontSize="20" FontAttributes="Bold" TextColor="Black"
+                           Margin="10, 8, 0, 8"></Label>
+                        </StackLayout>
+                        <StackLayout Spacing="0" BackgroundColor="White" Padding="8, 8, 8, 8">
+                            <Label Text="Tổng cộng"  FontSize="20" FontAttributes="Bold" TextColor="Black"
+                           Margin="4, 8, 0, 8"></Label>
+                            <StackLayout Orientation="Horizontal" Padding="5, 5">
+                                <Label Text="Thành tiền"  FontSize="16" TextColor="Black"></Label>
+                                <Label x:Name = "totalBillNotDiscount"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                            <StackLayout Orientation="Horizontal" Padding="5, 5">
+                                <Label Text="Giảm giá"  FontSize="16" TextColor="Black"></Label>
+                                <Label x:Name = "disCountBill"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                            <StackLayout Orientation="Horizontal" Padding="5, 8">
+                                <Label Text="Số tiền cần thanh toán"  FontSize="16" TextColor="Black"
+                               FontAttributes="Bold"></Label>
+                                <Label x:Name = "totalBill" Text="55.000đ"  FontSize="16" TextColor="Black" 
+                          HorizontalOptions="EndAndExpand" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="20, 0" HeightRequest="70">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ChoosePay"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="PayImage" Source="pay.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="50" WidthRequest="50"></Image>
+                            <StackLayout>
+                                <Label x:Name="PayTypeTitle" Text="Chọn phương thức thanh toán" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"
+                               ></Label>
+                                <Label x:Name="PayTypeDescription" Text="Phương thức thanh toán" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                            </StackLayout>
+                            <Image Source="next.png" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="0,0,0,15" Padding="20, 0">
+                            <StackLayout.GestureRecognizers>
+                                <!--Thêm sự kiện chuyển trang-->
+                                <TapGestureRecognizer></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="dropHoaDon.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="50" WidthRequest="50"></Image>
+                            <StackLayout x:Name="DeleteDonHang">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_DeleteDonHang"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="Xóa hóa đơn" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"
+                               TextColor="#f00000" Margin="12, 12, 0, 0"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+                <Grid  Grid.Row="1" BackgroundColor="#f7851c" ColumnDefinitions="5*, 2*">
+                    <StackLayout Padding="15, 5" Grid.Column="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="footerTypeGet" Text="Tự lấy hàng" TextColor="White" FontSize="16"></Label>
+                            <Label Text="●" TextColor="White"></Label>
+                            <Label x:Name="footerAmount" TextColor="White" FontSize="16"></Label>
+                        </StackLayout>
+                        <Label x:Name="footerTotal" TextColor="White" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Button Grid.Column="1" Text="ĐẶT NGAY" BackgroundColor="White" Padding="2" FontSize="13"
+                            TextColor="#f7851c" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Center"
+                            CornerRadius="16" Clicked="Button_Clicked"></Button>
+                </Grid>
+            </Grid>
+            <BoxView Color="Gray"
+                 Opacity="0"
+                 InputTransparent="True"
+                 x:Name="Backdrop">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+                    </TapGestureRecognizer>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Frame
+                x:Name="ChooseTypeGet"
+            HeightRequest="220"
+            VerticalOptions="End"
+            BackgroundColor="White"
+                TranslationY="280"
+            CornerRadius="20"
+            Padding="8">
+                <Frame.GestureRecognizers>
+                    <PanGestureRecognizer
+                    PanUpdated="PanGestureRecognizer_PanUpdated">
+                    </PanGestureRecognizer>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <StackLayout>
+                        <Grid HeightRequest="32">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Chọn phương thức nhận hàng" FontSize="16" Grid.Column="1" 
+                                HorizontalOptions="Center" FontAttributes="Bold"
+                               VerticalOptions="Center" TextColor="Black"></Label>
+                            <ImageButton Grid.Column="2" 
+                                        Source="Exit_Black.png" Padding="6" Margin="0, 0, 5, 0"
+                                        VerticalOptions="Center" HeightRequest="26"
+                                        HorizontalOptions="End" WidthRequest="26"
+                                        BackgroundColor="Transparent" CornerRadius="13" Clicked="CloseBottomSheet_Clicked"></ImageButton>
+                        </Grid>
+                        <BoxView HeightRequest="0.7" BackgroundColor="Black" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                    </StackLayout>
+                    <StackLayout Padding="30, 0" x:Name="SelfGetChoose">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_SelfGet"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="selfget.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="40" WidthRequest="40"></Image>
+                            <StackLayout>
+                                <Label Text="Tự đến lấy" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"
+                               ></Label>
+                                <Label Text="Tự đến lấy tại cửa hàng" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.2" BackgroundColor="Gray" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                    <StackLayout Padding="30, 0" x:Name="ShipperChoose">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Shipper"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="shipper.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="40" WidthRequest="40"></Image>
+                            <StackLayout>
+                                <Label Text="Giao hàng tận nơi" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"></Label>
+                                <Label Text="Shipper giao hàng tận nhà" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame
+                x:Name="ChooseTypePay"
+            HeightRequest="220"
+                TranslationY="280"
+            VerticalOptions="End"
+            BackgroundColor="White"
+            CornerRadius="20"
+            Padding="8">
+                <Frame.GestureRecognizers>
+                    <PanGestureRecognizer
+                    PanUpdated="PanGestureRecognizer_PanUpdated">
+                    </PanGestureRecognizer>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <StackLayout>
+                        <Grid HeightRequest="32">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Chọn phương thức thanh toán" FontSize="16" Grid.Column="1" 
+                                HorizontalOptions="Center" FontAttributes="Bold"
+                               VerticalOptions="Center" TextColor="Black"></Label>
+                            <ImageButton Grid.Column="2" 
+                                        Source="Exit_Black.png" Padding="6" Margin="0, 0, 5, 0"
+                                        VerticalOptions="Center" HeightRequest="26"
+                                        HorizontalOptions="End" WidthRequest="26"
+                                        BackgroundColor="Transparent" CornerRadius="13" Clicked="CloseBottomSheet_Clicked"></ImageButton>
+                        </Grid>
+                        <BoxView HeightRequest="0.7" BackgroundColor="Black" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                    </StackLayout>
+                    <StackLayout Padding="30, 0" x:Name="MomoChoose">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Momo"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Momo.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="40" WidthRequest="40"></Image>
+                            <StackLayout>
+                                <Label Text="Momo" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"
+                               ></Label>
+                                <Label Text="Ví điện tử Momo" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.2" BackgroundColor="Gray" 
+                             VerticalOptions="Center" WidthRequest="30"></BoxView>
+                    <StackLayout Padding="30, 0" x:Name="ZaloChoose">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Zalo"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="ZaloPay.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="40" WidthRequest="40"></Image>
+                            <StackLayout>
+                                <Label Text="Zalo Pay" FontSize="16" FontAttributes="Bold"
+                               TextColor="Black" Margin="12, 12, 0, 0"
+                               ></Label>
+                                <Label Text="Ví điện tử Zalo Pay" FontSize="14" 
+                               TextColor="Black" Margin="12, 0, 0, 12"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

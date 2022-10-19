@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_ChiTietCuaHang"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label x:Name="titleNameChiTietCuaHang" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="detailCuaHang">
+                <Image Source="{Binding Img}" Aspect="AspectFill" HeightRequest="250"></Image>
+                <BoxView HeightRequest="0.5" Color="Gray" Margin="0"></BoxView>
+                <StackLayout Margin="10,0,0,0">
+                    <Label Text="THE COFFEE HOUSE" TextColor="Gray" FontSize="14" VerticalOptions="Start" Margin="0,5,0,5"></Label>
+                    <Label Text="{Binding TenCH}" TextColor="Black" FontSize="20" VerticalOptions="Start" FontAttributes="Bold"></Label>
+                    <Frame HasShadow="False" Padding="0">
+                        <StackLayout Padding="0,0,10,0">
+                            <StackLayout x:Name="optDiaChi" Orientation="Horizontal" Margin="0" Padding="5,10,0,10">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="optDiaChi_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout BackgroundColor="#f0f0f0" HeightRequest="32" VerticalOptions="Start" Margin="0,0,15,0">
+                                    <Image Margin="10" HeightRequest="15" WidthRequest="15" Source="diachi_chitietcuahang.png" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"></Image>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Label TextColor="Black" FontSize="16" VerticalTextAlignment="Center" VerticalOptions="StartAndExpand">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="{}{0}, {1}, {2}, {3}">
+                                                <Binding Path="SoNhaDuong" />
+                                                <Binding Path="Phuong" />
+                                                <Binding Path="Quan" />
+                                                <Binding Path="Tinh" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <BoxView HeightRequest="0.5" Color="Gray" Margin="0,10,0,0" VerticalOptions="EndAndExpand"></BoxView>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout x:Name="optYeuThich" Orientation="Horizontal" Margin="0" Padding="5,10,0,10">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="optYeuThich_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout x:Name="heartYeuThich" BackgroundColor="#f0f0f0" HeightRequest="32" VerticalOptions="Start" Margin="0,0,15,0">
+                                    <Image Margin="10" HeightRequest="15" WidthRequest="15" Source="yeuthichicondathang.png" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"></Image>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand" WidthRequest="350">
+                                    <Label x:Name="contentYeuThich" TextColor="Black" FontSize="16" VerticalTextAlignment="Center" VerticalOptions="StartAndExpand" Text="Thêm vào danh sách yêu thích">
+                                    </Label>
+                                    <BoxView HeightRequest="0.5" Color="Gray" Margin="0,10,0,0" VerticalOptions="EndAndExpand"></BoxView>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout x:Name="optShare" Orientation="Horizontal" Margin="0" Padding="5,10,0,10">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="optShare_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout BackgroundColor="#f0f0f0" HeightRequest="32" VerticalOptions="Start" Margin="0,0,15,0">
+                                    <Image Margin="10" HeightRequest="15" WidthRequest="15" Source="chiase_chitietcuahang.png" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"></Image>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand" WidthRequest="350">
+                                    <Label TextColor="Black" FontSize="16" VerticalTextAlignment="Center" VerticalOptions="StartAndExpand" Text="Chia sẻ vị trí này">
+                                    </Label>
+                                    <BoxView HeightRequest="0.5" Color="Gray" Margin="0,10,0,0" VerticalOptions="EndAndExpand"></BoxView>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout x:Name="optLienHe" Orientation="Horizontal" Margin="0" Padding="5,10,0,10">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="optLienHe_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout BackgroundColor="#f0f0f0" HeightRequest="32" VerticalOptions="Start" Margin="0,0,15,0">
+                                    <Image Margin="10" HeightRequest="15" WidthRequest="15" Source="tongdailienhegopy.png" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"></Image>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand" WidthRequest="350">
+                                    <Label x:Name="sdtLienHe" TextColor="Black" FontSize="16" VerticalTextAlignment="Center" VerticalOptions="StartAndExpand" Text="Liên hệ: 18006936">
+                                    </Label>
+                                    <BoxView HeightRequest="0.5" Color="Gray" Margin="0,10,0,0" VerticalOptions="EndAndExpand"></BoxView>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

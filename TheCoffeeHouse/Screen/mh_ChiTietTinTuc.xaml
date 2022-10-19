@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_ChiTietTinTuc"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label Text ="Tin tức" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="{Binding TieuDe}" FontSize="25" FontAttributes="Bold" TextColor="Black"
+                       Margin="10"/>
+                <StackLayout  Margin="15,0,15,0" Orientation="Horizontal" Padding="10, 0"  VerticalOptions="Start">
+                    <Image Source="Calendar.jpg" Aspect="Fill" WidthRequest="17" HorizontalOptions="Start"
+                                                   HeightRequest="17" VerticalOptions="Center"></Image>
+                    <Label Text="{Binding NgayTinTuc, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" TextColor="Black"></Label>
+                </StackLayout>
+                <BoxView HeightRequest="0.5" Color="Gray" Margin="15,0,15,0"></BoxView>
+                <Image Source="{Binding Img}" Aspect="Fill" HeightRequest="200"
+                       HorizontalOptions="Start" VerticalOptions="Center" Margin="10"></Image>
+                <Label Text="{Binding NoiDung}" FontSize="18" TextColor="Black" Margin="10" HorizontalTextAlignment="Start"></Label>
+                <Label Text="--- THE COFFEE HOUSE ---" FontSize="14" FontAttributes="Italic" TextColor="Gray" HorizontalOptions="EndAndExpand"
+                       Margin="10"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

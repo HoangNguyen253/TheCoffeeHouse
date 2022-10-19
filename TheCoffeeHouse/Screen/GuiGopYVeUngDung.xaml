@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cusomrender="clr-namespace:TheCoffeeHouse.CusomRender"
+             x:Class="TheCoffeeHouse.Screen.GuiGopYVeUngDung"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundImageSource="BackgroundLogin.png"
+             Shell.PresentationMode="ModalAnimated">
+    <ScrollView BackgroundColor="White" Padding="12">
+        <StackLayout>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                    <Label Text="Gửi góp ý ứng dụng" TextColor="Black" FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                    <ImageButton x:Name="exitLogin" Source="Exit.png" Clicked="exitLogin_Clicked" HorizontalOptions="EndAndExpand"
+                         HeightRequest="26" Margin="0, 5, 5, 0" Padding="5" CornerRadius="13" BackgroundColor="#505b5959"></ImageButton>
+                </StackLayout>
+
+                <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                <StackLayout Orientation ="Vertical"  Padding="10">
+                    <Label Text="Đối với chúng tôi, mọi góp ý của bạn đều quý giá." TextColor="Black" FontSize="Body" VerticalOptions="Center"
+                           FontAttributes="Bold"></Label>
+                    <Frame Padding="0" BorderColor="Gray" Margin="0,0,0,10" HeightRequest="100" HasShadow="False" CornerRadius="10">
+                        <cusomrender:NoneBGEntry x:Name="noiDungGopY" Placeholder="Chia sẻ cảm nghĩ của bạn." Keyboard="Text" Margin="10,0,10,0" HeightRequest="100"></cusomrender:NoneBGEntry>
+                    </Frame>
+                </StackLayout>
+                <Frame BackgroundColor="Orange" Padding="0" BorderColor="Gray" Margin="0,10,0,0" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                    <Button x:Name="btnGuiGopY" BackgroundColor="Orange" Text="Gửi góp ý" TextColor="White" Clicked="btnGuiGopY_Clicked"></Button>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

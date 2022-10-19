@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.mh_Main"
+       FlyoutBehavior="Disabled"
+       xmlns:dsScreen="clr-namespace:TheCoffeeHouse.Screen">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="Black" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="Gray" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Orange"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    <ShellItem>
+        <ShellContent ContentTemplate="{DataTemplate dsScreen:LoginPage}" Route="LoginPage"></ShellContent>
+    </ShellItem>
+    <TabBar>
+        <Tab Title="Trang chủ"
+             Icon="trangchu.png">
+            <ShellContent ContentTemplate="{DataTemplate dsScreen:mh_TrangChu}" Route="mh_TrangChu"></ShellContent>
+        </Tab>
+        
+        <Tab Title="Đặt hàng"
+             Icon="dathang.png">
+            <ShellContent ContentTemplate="{DataTemplate dsScreen:mh_DatHang}"></ShellContent>
+        </Tab>
+        
+        <Tab Title="Cửa hàng"
+             Icon="cuahang.png">
+            <ShellContent ContentTemplate="{DataTemplate dsScreen:mh_CuaHang}"></ShellContent>
+        </Tab>
+
+        <Tab Title="Tích điểm"
+             Icon="tichdiem.png">
+            <ShellContent Title="Tích điểm" ContentTemplate="{DataTemplate dsScreen:mh_TichDiem}"></ShellContent>
+        </Tab>
+        <Tab Title="Khác"
+             Icon="khac.png">
+            <ShellContent ContentTemplate="{DataTemplate dsScreen:mh_Khac}"></ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

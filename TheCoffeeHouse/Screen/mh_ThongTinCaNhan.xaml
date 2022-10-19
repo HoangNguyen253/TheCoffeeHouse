@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cusomrender="clr-namespace:TheCoffeeHouse.CusomRender"
+             x:Class="TheCoffeeHouse.Screen.mh_ThongTinCaNhan"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label Text="Cập nhật thông tin" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ScrollView BackgroundColor="#f1f1f1" Padding="12">
+        <StackLayout>
+            <Frame CornerRadius="100" HeightRequest="100"  WidthRequest="100" HorizontalOptions="Center"
+           Padding="0" IsClippedToBounds="True" Margin="0, 15, 0, 15">
+                <ImageButton x:Name="userAvatar" Source="Avatar_DaiDien.jpeg" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+            </Frame>
+            <Frame Padding="10" HasShadow="False" CornerRadius="10">
+                <StackLayout>
+                    <Frame Padding="0" BorderColor="Gray" Margin="0,0,0,10" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                        <cusomrender:NoneBGEntry x:Name="HoTenNguoiDung" Placeholder="Họ và tên" Margin="10,0,10,0"></cusomrender:NoneBGEntry>
+                    </Frame>
+                    <Frame Padding="0" BorderColor="Gray" Margin="0,0,0,10" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                        <cusomrender:NoneBGEntry x:Name="SDTNguoiDung" Placeholder="Số điện thoại" Keyboard="Numeric" Margin="10,0,10,0"></cusomrender:NoneBGEntry>
+                    </Frame>
+                    <Frame Padding="0" BorderColor="Gray" Margin="0,0,0,10" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <cusomrender:NoneBGDatePicker x:Name="NgaySinhNguoiDung" Format="dd-MM-yyyy" Margin="10,0,0,0"></cusomrender:NoneBGDatePicker>
+                            <Image Margin="0,0,15,0" Source="calendar.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"></Image>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="0" BorderColor="Gray" Margin="0,0,0,10" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                        <cusomrender:NoneBGPicker x:Name="GioiTinhNguoiDung" Margin="10,0,10,0"
+                                Title="Giới tính" TitleColor="Gray">
+                        </cusomrender:NoneBGPicker>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Orange" Padding="0" BorderColor="Gray" Margin="0,10,0,0" HeightRequest="50" HasShadow="False" CornerRadius="10">
+                <Button x:Name="capNhatTaiKhoanbtn" BackgroundColor="Orange" Text="Cập nhật tài khoản" TextColor="White" Clicked="capNhatTaiKhoanbtn_Clicked"></Button>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

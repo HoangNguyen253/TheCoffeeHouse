@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_TrangChu">
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*, *">
+            <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center">
+                <Image x:Name="HelloImg" Source="sun.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="25" WidthRequest="25" Grid.Column="2"></Image>
+                <Label x:Name="HelloText" Text="Chào buổi sáng" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="End"
+               FontSize="20"/>
+            </StackLayout>
+            <ImageButton Margin="0,0,20,0"
+                Grid.Column="1" Source="notificationsetting.png" 
+                         VerticalOptions="Center" HorizontalOptions="End"
+                         HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"></ImageButton>
+            <Frame WidthRequest="15" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1"
+                           CornerRadius="50" BackgroundColor="Red" Margin="0,-20,15,0" Padding="1">
+                <Label Text="3" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            </Frame>
+        </Grid>
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="0, 0, 0, 20">
+                <StackLayout BackgroundColor="#fff1cd" Padding="0, 20">
+                    <Frame BackgroundColor="#f7851c" CornerRadius="5" HeightRequest="180" WidthRequest="330" HorizontalOptions="Center">
+                        <StackLayout>
+                            <Label x:Name="lblUserName" TextColor="White" FontSize="18" FontAttributes="Bold"></Label>
+                            <Label x:Name="lblUserAccum" TextColor="White" FontSize="14" Margin="0, 0 , 0, 20"></Label>
+                            <Frame Margin="0, 0, 0, 10" CornerRadius="5" HeightRequest="120" Padding="0">
+                                <Image x:Name="imgMaVach"></Image>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout>
+                    <Frame CornerRadius="5" Padding="0" WidthRequest="360" HorizontalOptions="Center">
+                        <CarouselView x:Name="SlideImage" IndicatorView="IndicatorView" HeightRequest="200">
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Url}" Aspect="Fill"></Image>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </Frame>
+                    <IndicatorView 
+                        x:Name="IndicatorView" 
+                        IndicatorColor="gray" 
+                        SelectedIndicatorColor="DarkGray" 
+                        IndicatorSize="10"
+                        VerticalOptions="Center">
+                    </IndicatorView>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Khuyến mãi hôm nay" FontSize="22" FontAttributes="Bold" Padding="10, 5, 0, 5" TextColor="Black"></Label>
+                        <Frame Padding="10, 0" BorderColor="Black" CornerRadius="15" HeightRequest="30" VerticalOptions="Center">
+                            <Label x:Name="remainTime" FontSize="14" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"></Label>
+                        </Frame>
+                    </StackLayout>
+                    
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" x:Name="ListSanPhamUuDai">
+                            
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Tin tức" FontSize="22" FontAttributes="Bold" Padding="10, 5, 0, 5" TextColor="Black"></Label>
+                    <FlexLayout x:Name="listTinTuc"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                VerticalOptions="Start"
+                                Wrap="Wrap">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame HasShadow="True" CornerRadius="8" Padding="0" Margin="10, 10">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding MaTT}" Tapped="btnViewChiTietTinTuc_Tapped"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                    <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0" VerticalOptions="Start">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="180"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="190"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding Img}" Aspect="AspectFill" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Padding="5, 0" Text="{Binding TieuDe}" FontSize="18" TextColor="Black"  Grid.Row="1"  Grid.Column="0" FontAttributes="Bold"></Label>
+                                        <StackLayout  Grid.Row="2" Orientation="Horizontal"  Grid.Column="0" Padding="10, 0" Margin="10">
+                                            <Image Source="Calendar.jpg" Aspect="Fill" WidthRequest="17" HorizontalOptions="Start"
+                                                   HeightRequest="17" VerticalOptions="Center"></Image>
+                                            <Label Text="{Binding NgayTinTuc, StringFormat='{0:dd/MM}'}" FontSize="14" TextColor="Black"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

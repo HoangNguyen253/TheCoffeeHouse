@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_CaiDat"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+    <Shell.TitleView>
+        <Label Text="Cài đặt" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20"/>
+    </Shell.TitleView>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="backarrow.png"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ScrollView BackgroundColor="#f1f1f1" Padding="12">
+        <StackLayout>
+            <Frame Padding="10" HasShadow="False" CornerRadius="10">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <Image Source="notificationsetting.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <Label Text="Notification Setting" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                        <Switch VerticalOptions="Center" HorizontalOptions="EndAndExpand" OnColor="#fee27f" ThumbColor="Orange" IsToggled="True"></Switch>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <Image Source="lienkettaikhoan.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <Label Text="Liên kết tài khoản" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="0.5" Color="Gray"></BoxView>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10">
+                        <Image Source="vechungtoi.png" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="20" WidthRequest="20"></Image>
+                        <Label Text="Về chúng tôi" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

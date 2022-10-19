@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customrender="clr-namespace:TheCoffeeHouse.CusomRender"
+             x:Class="TheCoffeeHouse.Screen.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundImageSource="BackgroundLogin.png"
+             Shell.PresentationMode="ModalAnimated">
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="White"  Grid.Column="0" Grid.Row="1" CornerRadius="30"
+                   TranslationY="150"
+                   HeightRequest="800" VerticalOptions="Start">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="Chào mừng bạn đến với" HorizontalTextAlignment="Center" FontSize="16">
+                            </Label>
+                            <Image Source="LogoTheCoffeeHouse.png" HeightRequest="40"></Image>
+                        </StackLayout>
+                        <StackLayout Margin="0, 25, 0, 30">
+                            <Frame Padding="1" BorderColor="#adadad" CornerRadius="10" HasShadow="False">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="GoogleLogo.png" HeightRequest="20" VerticalOptions="Center" 
+                                       WidthRequest="20" HorizontalOptions="Center" Aspect="AspectFill"
+                               Grid.Column="0" Grid.Row="0"></Image>
+                                    <customrender:NoneBGEntry Keyboard="Text" Placeholder="Nhập email"
+                               Grid.Column="1" Grid.Row="0" FontSize="16" x:Name="entryMail"></customrender:NoneBGEntry>
+                                </Grid>
+                            </Frame>
+                            <Button x:Name="btnLogin" Clicked="btnLogin_Clicked" Text="Đăng nhập" Padding="0, 10, 0, 10" FontSize="16"
+                                TextColor="White" BackgroundColor="#ed7919" CornerRadius="10"
+                                Margin="0, 10, 0, 0"></Button>
+                        </StackLayout>
+                        <StackLayout Margin="0, 0, 0, 30">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center">
+                                    <BoxView HeightRequest="1" BackgroundColor="Silver"></BoxView>
+                                </StackLayout>
+
+                                <Label Text="HOẶC" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"
+                                   HorizontalTextAlignment="Center"></Label>
+                                <StackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="Center">
+                                    <BoxView HeightRequest="1" BackgroundColor="Silver" ></BoxView>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout Margin="0, 0, 0, 30">
+                            <Frame HasShadow="False" BackgroundColor="#1976d3" Padding="13" CornerRadius="10">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Image Source="FacebookLogo.png" HeightRequest="20"></Image>
+                                    <Label Text="Tiếp tục bằng Facebook" TextColor="White" FontSize="16"></Label>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <BoxView Color="Gray"
+                 Opacity="0"
+                 InputTransparent="True"
+                 x:Name="Backdrop">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+
+                    </TapGestureRecognizer>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Frame
+                x:Name="BottomSheet"
+                HeightRequest="800"
+                TranslationY="860"
+                VerticalOptions="End"
+                BackgroundColor="White"
+                CornerRadius="20"
+                Padding="0">
+                <Frame.GestureRecognizers>
+                    <PanGestureRecognizer
+                            PanUpdated="PanGestureRecognizer_PanUpdated">
+                    </PanGestureRecognizer>
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Đăng nhập" FontSize="18" Grid.Column="1" 
+                               FontAttributes="Bold" HorizontalOptions="Center"
+                               VerticalOptions="Center" TextColor="Black"></Label>
+                            <ImageButton x:Name="CloseBottomSheet" Grid.Column="2" Clicked="CloseBottomSheet_Clicked"
+                                        Source="Exit_Black.png" Margin="0, 15, 15, 0" Padding="5"
+                                        VerticalOptions="Start" HeightRequest="26"
+                                        HorizontalOptions="End" WidthRequest="26"
+                                        BackgroundColor="Transparent" CornerRadius="13"></ImageButton>
+                        </Grid>
+                        <StackLayout Padding="5,0" Margin="0">
+                            <BoxView HeightRequest="1" VerticalOptions="Start" BackgroundColor="Black"></BoxView>
+                        </StackLayout>
+                        <StackLayout Margin="0, 60, 0, 0" Padding="30, 0">
+                            <StackLayout>
+                                <Label Text="Xác nhận mã OTP" FontSize="18" 
+                                   FontAttributes="Bold" TextColor="Black"
+                                   HorizontalOptions="Center"></Label>
+                                <Label x:Name="textNoti"
+                                   HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="15"
+                                   TextColor="Black"></Label>
+                            </StackLayout>
+                            <StackLayout Margin="0, 40, 0, 0">
+                                <StackLayout>
+                                    <Label Text="Nhập mã để tiếp tục" FontSize="16"
+                                   HorizontalTextAlignment="Center" TextColor="Black"></Label>
+                                    <Label x:Name="remainTime" FontSize="16" Text="03:00"
+                                   HorizontalTextAlignment="Center" TextColor="Black"></Label>
+                                </StackLayout>
+                                <Frame Padding="5, 0" CornerRadius="5">
+                                    <customrender:NoneBGEntry x:Name="OTPValue" Placeholder="Nhập OTP" Keyboard="Numeric"></customrender:NoneBGEntry>
+                                </Frame>
+                                <Button x:Name="btnValidateOTP" Text="Xác thực" Padding="0, 10, 0, 10" FontSize="16" Clicked="btnValidateOTP_Clicked"
+                                TextColor="White" BackgroundColor="#ed7919" CornerRadius="10"
+                                Margin="0, 10, 0, 0" WidthRequest="200" HorizontalOptions="Center"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

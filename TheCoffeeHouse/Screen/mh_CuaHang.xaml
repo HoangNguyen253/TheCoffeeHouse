@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheCoffeeHouse.Screen.mh_CuaHang">
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*, 80">
+            <Label Text="Cửa hàng" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="20" Grid.Column="0" FontAttributes="Bold"/>
+            <ImageButton Source="notificationsetting.png" VerticalOptions="Center" HorizontalOptions="Center"
+                                   HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent" Grid.Column="1" BorderColor="Gray"></ImageButton>
+            <Frame WidthRequest="15" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"
+                           CornerRadius="50" BackgroundColor="Red" Margin="20,-20,0,0" Padding="1">
+                <Label Text="3" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            </Frame>
+        </Grid>
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#f0f0f0">
+                <Label x:Name="titleCuaHangYeuThich" Text="Các cửa hàng yêu thích" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="12,10,0,0"></Label>
+                <BoxView HeightRequest="0.5" Color="Gray" Margin="0"></BoxView>
+                <ListView x:Name="lstDSCuaHangYeuThich" Margin="10,0,10,10" SelectionMode="None" RowHeight="90" ItemTapped="lstDSCuaHangYeuThich_ItemTapped"
+                          HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="0" CornerRadius="10" Margin="0,5,0,5" BorderColor="Orange">
+                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                        <Image Source="{Binding Img}" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="60" WidthRequest="100" ></Image>
+                                        <StackLayout>
+                                            <Label Text="☆ THE COFFEE HOUSE" TextColor="Orange" FontSize="14" VerticalOptions="Start" Margin="0,5,0,5"></Label>
+                                            <Label Text="{Binding TenCH}" TextColor="Black" FontSize="18" VerticalOptions="Center"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Label Text="Các cửa hàng khác" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="12,10,0,0"></Label>
+                <BoxView HeightRequest="0.5" Color="Gray" Margin="0"></BoxView>
+                <ListView x:Name="lstDSCuaHang" RowHeight="90" Margin="10,0,10,10" SelectionMode="None" ItemTapped="lstDSCuaHang_ItemTapped"
+                          HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="0" CornerRadius="10" Margin="0,5,0,5" BorderColor="Orange">
+                                    <StackLayout Orientation="Horizontal" Margin="0">
+                                        <Image Source="{Binding Img}" VerticalOptions="Center" HorizontalOptions="Start"
+                                   HeightRequest="60" WidthRequest="100" ></Image>
+                                        <StackLayout>
+                                            <Label Text="THE COFFEE HOUSE" TextColor="Gray" FontSize="14" VerticalOptions="Start" Margin="0,5,0,5"></Label>
+                                            <Label Text="{Binding TenCH}" TextColor="Black" FontSize="18" VerticalOptions="Center"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
